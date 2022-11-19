@@ -1,51 +1,43 @@
-
-import React from 'react'
+import React from "react";
 
 function ModalLogin() {
   return (
     <div
       className="modal fade"
-      id="exampleModal"
-      tabIndex={-1}
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabIndex="-1"
+      aria-labelledby="staticBackdropLabel"
       aria-hidden="true"
     >
-      <div className="modal-dialog" role="document">
+      <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">
-              Email Matched
-            </h5>
+            <h1 className="modal-title fs-5" id="staticBackdropLabel">
+              Modal title
+            </h1>
             <button
               type="button"
-              className="close"
-              data-dismiss="modal"
+              className="btn-close"
+              data-bs-dismiss="modal"
               aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+            ></button>
           </div>
-          <div className="modal-body text-center my-3  ">
-           
-           
-          <h1 style={{color:"green"}}>You Have Successfully Join</h1>  
-           
-          </div>
+          <div className="modal-body"> Login Successfull </div>
           <div className="modal-footer">
             <button
               type="button"
               className="btn btn-secondary"
-              data-dismiss="modal"
+              data-bs-dismiss="modal"
             >
               Close
             </button>
-         
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ModalLogin
+export default ModalLogin;

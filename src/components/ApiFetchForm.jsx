@@ -2,23 +2,21 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import ModalFails from './ModalFails';
 import ModalLogin from './ModalLogin';
-// import ModalFails from './ModalFails';
-// import ModalLogin from './ModalLogin';
 
 
 export default function ApiFetchForm() {
+
     const [email, setEmail] = useState('');
-    const [apiEmail, setApiEmail] = useState([]);
+    const [apiEmail, setApiEmail] = useState('');
     const [modal, setModal] = useState(false);
+
 
     useEffect(() => {
 
         const URL = 'https://jsonplaceholder.typicode.com/users'
 
         axios.get(URL).then(response=>{
-            console.log(response.data);
             if(response.data){
-
                 const urlEmail = response.data.map(apiemail =>apiemail.email)
                 setApiEmail(urlEmail)
             }
@@ -35,20 +33,20 @@ export default function ApiFetchForm() {
 
 
 
-    const handleClick = () => {
+    const onLogin = (e) => {
+
+        e.preventDefault()
+
+        setModal(false)
         for(let i = 0; i <= apiEmail.length; i++) {
-              if(apiEmail[i] === email) {
+                console.log(apiEmail[i]);
+              if(apiEmail[i] == email) {
                 setModal(true)
-            }
-        }
-        
-        if(modal) {
-            <ModalLogin />
-        } else <ModalFails />
-        
+                console.log(modal);
+            } 
+        }       
     }
     
-    console.log(modal);
 
     
 
@@ -57,6 +55,9 @@ export default function ApiFetchForm() {
 
        
 
+             {
+                modal === true ? <ModalLogin />: <ModalFails />
+            } 
 
 
 
@@ -68,7 +69,7 @@ export default function ApiFetchForm() {
                                 className="card bg-dark text-white"
                                 style={{ borderRadius: "1rem" }}
                             >
-                                <form onSubmit={(event)=>{event.preventDefault()}} className="card-body p-5 text-center">
+                                <form  className="card-body p-5 text-center">
                                     <div className="mb-md-5 mt-md-4 pb-5">
                                         <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
                                         <p className="text-white-50 mb-5">
@@ -104,7 +105,8 @@ export default function ApiFetchForm() {
                                         <button
                                             className="btn btn-outline-light btn-lg px-5"
                                             type="submit"
-                                            onClick={handleClick}
+                                            onClick={onLogin}
+                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                         >
                                             Login
                                         </button>
