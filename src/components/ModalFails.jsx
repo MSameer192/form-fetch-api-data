@@ -24,7 +24,7 @@ function ModalFails() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body">Opps! You have failed to Login.. TryAgain</div>
+          <div className="modal-body" style={{color: 'red', fontSize: '1.2rem'}}>Opps! You have failed to Login.. TryAgain</div>
           <div className="modal-footer">
             <button
               type="button"

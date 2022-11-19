@@ -24,7 +24,7 @@ function ModalLogin() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body"> Congrats! You have successfully login </div>
+          <div className="modal-body" style={{color: 'green', fontSize: '1.2rem'}}> Congrats! You have successfully login </div>
           <div className="modal-footer">
             <button
               type="button"
