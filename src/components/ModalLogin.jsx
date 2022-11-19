@@ -15,7 +15,7 @@ function ModalLogin() {
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="staticBackdropLabel">
-              Modal title
+              Email is correct
             </h1>
             <button
               type="button"
@@ -24,7 +24,7 @@ function ModalLogin() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body"> Login Successfull </div>
+          <div className="modal-body"> Congrats! You have successfully login </div>
           <div className="modal-footer">
             <button
               type="button"

@@ -17,21 +17,16 @@ export default function ApiFetchForm() {
 
         axios.get(URL).then(response=>{
             if(response.data){
-                const urlEmail = response.data.map(apiemail =>apiemail.email)
+                const urlEmail = response.data.map(apiemail => apiemail.email)
                 setApiEmail(urlEmail)
             }
         }).catch(error=>{console.log(error);})
 
         
-    }, []);
-    
+    }, []);   
 
     //    console.log(apiEmail);
     //    console.log(email);
-
-    
-
-
 
     const onLogin = (e) => {
 
@@ -47,7 +42,6 @@ export default function ApiFetchForm() {
         }       
     }
     
-
     
 
     return (

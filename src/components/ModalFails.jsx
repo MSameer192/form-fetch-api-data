@@ -15,7 +15,7 @@ function ModalFails() {
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id="staticBackdropLabel">
-              Modal title
+            Email is not correct
             </h1>
             <button
               type="button"
@@ -24,7 +24,7 @@ function ModalFails() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="modal-body">Login Failed</div>
+          <div className="modal-body">Opps! You have failed to Login.. TryAgain</div>
           <div className="modal-footer">
             <button
               type="button"
